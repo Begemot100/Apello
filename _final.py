@@ -2,14 +2,14 @@ import os
 from PIL import Image, ImageDraw, ImageFont
 from tkinter import Tk, font
 
-from PIL.ImageFont import truetype
+from PIL.ImageFont import truetype #I can make the libraries needed to run automatically load
 
 font.root = Tk()
 # print(font.families())
 
 def image_signature(directory):
     for file in os.listdir(directory): # loop through the folder
-        if file.endswith(".jpg"):
+        if file.endswith(".jpg", ".HEIC"):
             name = os.path.splitext(file)[0].replace("-", ' ').title()  # format the file name
             image = Image.open(directory + "/" + file)
             image.load() # loading the library
